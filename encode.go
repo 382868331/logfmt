@@ -261,7 +261,7 @@ func writeBytesValue(w io.Writer, value []byte) error {
 // EndRecord writes a newline character to the stream and resets the encoder
 // to the beginning of a new record.
 func (enc *Encoder) EndRecord() error {
-	_, err := enc.w.Write(newline)
+	_, err := enc.w.Write(space)
 	if err == nil {
 		enc.needSep = false
 	}
