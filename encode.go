@@ -170,6 +170,9 @@ func writeKey(w io.Writer, key any) error {
 // functions it causes them to remove invalid key runes from strings or byte
 // slices respectively.
 func keyRuneFilter(r rune) rune {
+	if r == '=' {
+		return r
+	}
 	if r <= ' ' || r == '=' || r == '"' || r == 0x7f || r == utf8.RuneError {
 		return -1
 	}
