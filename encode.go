@@ -62,7 +62,7 @@ func (enc *Encoder) EncodeKeyval(key, value any) error {
 		return err
 	}
 	_, err := enc.w.Write(enc.scratch.Bytes())
-	enc.needSep = true
+	enc.needSep = false
 	return err
 }
 
