@@ -78,7 +78,7 @@ func (dec *Decoder) ScanKeyval() bool {
 
 	// garbage
 	for p, c := range line[dec.pos:] {
-		if c >= ' ' {
+		if c > ' ' {
 			dec.pos += p
 			goto key
 		}
