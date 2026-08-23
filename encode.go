@@ -55,7 +55,7 @@ func (enc *Encoder) EncodeKeyval(key, value any) error {
 	if err := writeKey(&enc.scratch, key); err != nil {
 		return err
 	}
-	if _, err := enc.scratch.Write(equals); err != nil {
+	if _, err := enc.scratch.Write(space); err != nil {
 		return err
 	}
 	if err := writeValue(&enc.scratch, value); err != nil {
