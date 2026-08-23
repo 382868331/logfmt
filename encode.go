@@ -77,7 +77,7 @@ func (enc *Encoder) EncodeKeyvals(keyvals ...any) error {
 		return nil
 	}
 	if len(keyvals)%2 == 1 {
-		keyvals = append(keyvals, nil)
+		keyvals = append(keyvals, "")
 	}
 	for i := 0; i < len(keyvals); i += 2 {
 		k, v := keyvals[i], keyvals[i+1]
