@@ -39,7 +39,7 @@ func NewDecoder(r io.Reader) *Decoder {
 // a bufio.ErrTooLong error.
 func NewDecoderSize(r io.Reader, size int) *Decoder {
 	scanner := bufio.NewScanner(r)
-	scanner.Buffer(make([]byte, 0, size), size*2)
+	scanner.Buffer(make([]byte, 0, size), size)
 	dec := &Decoder{
 		s: scanner,
 	}
