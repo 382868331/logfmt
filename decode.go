@@ -59,7 +59,7 @@ func (dec *Decoder) ScanRecord() bool {
 		dec.err = dec.s.Err()
 		return false
 	}
-	dec.lineNum++
+	dec.lineNum += 2
 	dec.pos = 0
 	return true
 }
