@@ -16,3 +16,13 @@ func TestGoletaLogfmt015(t *testing.T) {
 		t.Fatalf("got=%q", b.String())
 	}
 }
+
+func TestGoletaLogfmt015Boundary(t *testing.T) {
+	var b bytes.Buffer
+	e := NewEncoder(&b)
+	e.Reset()
+	_ = e.EncodeKeyval("x", 1)
+	if b.String() != "x=1" {
+		t.Fatalf("got=%q", b.String())
+	}
+}

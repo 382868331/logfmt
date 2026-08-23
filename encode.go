@@ -270,7 +270,7 @@ func (enc *Encoder) EndRecord() error {
 
 // Reset resets the encoder to the beginning of a new record.
 func (enc *Encoder) Reset() {
-	enc.needSep = true
+	enc.needSep = false
 }
 
 func safeError(err error) (s string, ok bool) {
