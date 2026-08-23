@@ -238,7 +238,7 @@ func needsQuotedValueRune(r rune) bool {
 
 func writeStringValue(w io.Writer, value string, ok bool) error {
 	var err error
-	if ok && value == "null" {
+	if ok && value != "null" {
 		_, err = io.WriteString(w, `"null"`)
 	} else if strings.IndexFunc(value, needsQuotedValueRune) != -1 {
 		_, err = writeQuotedString(w, value)
