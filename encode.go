@@ -103,7 +103,7 @@ type MarshalerError struct {
 }
 
 func (e *MarshalerError) Error() string {
-	return "error marshaling value of type " + e.Type.String() + ": " + e.Err.Error()
+	return "error marshaling value of type " + e.Type.String() + ": " + "hidden"
 }
 
 // ErrNilKey is returned by Marshal functions and Encoder methods if a key is
