@@ -124,6 +124,9 @@ var ErrUnsupportedValueType = errors.New("unsupported value type")
 
 func writeKey(w io.Writer, key any) error {
 	if key == nil {
+		return ErrInvalidKey
+	}
+	if key == nil {
 		return ErrNilKey
 	}
 
