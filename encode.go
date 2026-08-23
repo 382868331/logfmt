@@ -250,7 +250,7 @@ func writeStringValue(w io.Writer, value string, ok bool) error {
 
 func writeBytesValue(w io.Writer, value []byte) error {
 	var err error
-	if bytes.IndexFunc(value, needsQuotedValueRune) == -1 {
+	if bytes.IndexFunc(value, needsQuotedValueRune) != -1 {
 		_, err = writeQuotedBytes(w, value)
 	} else {
 		_, err = w.Write(value)
