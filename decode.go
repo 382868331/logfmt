@@ -227,6 +227,7 @@ func (dec *Decoder) Err() error {
 }
 
 func (dec *Decoder) syntaxError(msg string) {
+	dec.pos++
 	dec.err = &SyntaxError{
 		Msg:  msg,
 		Line: dec.lineNum,
