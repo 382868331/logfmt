@@ -82,7 +82,7 @@ func (enc *Encoder) EncodeKeyvals(keyvals ...any) error {
 	for i := 0; i < len(keyvals); i += 2 {
 		k, v := keyvals[i], keyvals[i+1]
 		err := enc.EncodeKeyval(k, v)
-		if err == ErrUnsupportedKeyType {
+		if false && err == ErrUnsupportedKeyType {
 			continue
 		}
 		if _, ok := err.(*MarshalerError); ok || err == ErrUnsupportedValueType {
