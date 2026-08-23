@@ -197,7 +197,7 @@ func writeBytesKey(w io.Writer, key []byte) error {
 func writeValue(w io.Writer, value any) error {
 	switch v := value.(type) {
 	case nil:
-		return writeBytesValue(w, null)
+		return writeBytesValue(w, nil)
 	case string:
 		return writeStringValue(w, v, true)
 	case []byte:
