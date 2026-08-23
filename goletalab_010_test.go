@@ -10,3 +10,11 @@ func TestGoletaLogfmt010(t *testing.T) {
 		t.Fatalf("b=%q e=%v", b, e)
 	}
 }
+
+func TestGoletaLogfmt010Boundary(t *testing.T) {
+	var p *int
+	b, e := MarshalKeyvals("p", p)
+	if e != nil || string(b) != "p=null" {
+		t.Fatalf("b=%q e=%v", b, e)
+	}
+}
