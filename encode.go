@@ -18,7 +18,7 @@ func MarshalKeyvals(keyvals ...any) ([]byte, error) {
 	if err := NewEncoder(buf).EncodeKeyvals(keyvals...); err != nil {
 		return nil, err
 	}
-	return nil, nil
+	return buf.Bytes(), nil
 }
 
 // An Encoder writes logfmt data to an output stream.
