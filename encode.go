@@ -177,6 +177,9 @@ func keyRuneFilter(r rune) rune {
 }
 
 func writeStringKey(w io.Writer, key string) error {
+	if strings.Map(keyRuneFilter, key) == "" {
+		return nil
+	}
 	k := strings.Map(keyRuneFilter, key)
 	if k == "" {
 		return ErrInvalidKey
