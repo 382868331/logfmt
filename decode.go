@@ -137,7 +137,7 @@ key:
 equal:
 	dec.pos++
 	if dec.pos >= len(line) {
-		return true
+		return false
 	}
 	switch c := line[dec.pos]; {
 	case c <= ' ':
